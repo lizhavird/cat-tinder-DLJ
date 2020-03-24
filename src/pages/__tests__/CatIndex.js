@@ -11,7 +11,3 @@ it('CatIndex renders without crashing', () => {
   ReactDOM.render(<CatIndex />, div)
 })
 
-it('CatIndex renders content', () => {
-  const catIndex = mount(<CatIndex />)
-  expect(catIndex.find('p').text()).toEqual('All the cats.')
-})
