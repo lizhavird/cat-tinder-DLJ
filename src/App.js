@@ -4,6 +4,7 @@ import "./App.css"
 import Header from './components/Header'
 import CatIndex from './pages/CatIndex'
 import CatShow from './pages/CatShow'
+import NewCat from './pages/NewCat'
 import cats from './cats'
 class App extends Component{
   constructor(){
@@ -12,6 +13,9 @@ class App extends Component{
       allCats: cats
     }
   }
+  handleNewCat = cat => {
+    console.log({cat})
+  }
   render(){
     return(
       <React.Fragment>
@@ -19,6 +23,7 @@ class App extends Component{
         <Router>
           <Switch>
             <Route exact path="/cat/:id" component={ CatShow } />
+            <Route exact path="/createcat" render={ (props) => <NewCat handleNewCat={ this.handleNewCat } /> }/>
             <Route exact path="/" render={ (props) => <CatIndex cats={ this.state.allCats } /> } />
           </Switch>
         </Router>

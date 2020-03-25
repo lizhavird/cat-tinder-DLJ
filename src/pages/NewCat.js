@@ -21,7 +21,7 @@ class NewCat extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.handleSubmit(this.state.form)
+        this.props.handleNewCat(this.state.form)
         this.setState({
             form:{
                 name: '',
